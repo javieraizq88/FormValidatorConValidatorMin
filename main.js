@@ -49,8 +49,36 @@ function validar (e){
         form.lastName.classList.add("is-valid");
     }
 
+    if (!validator.isAlpha (form.City.value) || validator.isEmpty (form.City.value)) { 
+        form.City.focus ();
+        form.City.classList.add("bg-danger");
+        form.City.classList.remove("is-valid");
+    } else {
+        form.City.classList.remove("bg-danger");
+        form.City.classList.add("is-valid");
+    }
 
-    
+    if (validator.isEmpty (form.inputState.value)) { 
+        form.inputState.focus ();
+        form.inputState.classList.add("bg-danger");
+        form.inputState.classList.remove("is-valid");
+    } else {
+        form.inputState.classList.remove("bg-danger");
+        form.inputState.classList.add("is-valid");
+    }
+
+
+    if (!validator.isPostalCode (form.postalCode.value) || validator.isEmpty (form.postalCode.value)) { 
+        form.postalCode.focus ();
+        form.postalCode.classList.add("is-invalid");
+        form.postalCode.classList.remove("is-valid");
+    } else {
+        form.postalCode.classList.remove("is-invalid");
+        form.postalCode.classList.add("is-valid");
+    }
+
+
+
 }
 
 form.addEventListener("submit", validar);
