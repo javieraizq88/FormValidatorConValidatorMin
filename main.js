@@ -13,7 +13,7 @@ function validar (e){
         form.Card.classList.add("is-valid");
     }
 
-    if (!validator.isEmpty ( form.CVC.value)) { 
+    if (!!validator.isNumeric (form.CVC.value) || validator.isEmpty ( form.CVC.value)) { 
         form.CVC.focus ();
         form.CVC.classList.add("bg-danger");
         form.CVC.classList.remove("is-valid");
@@ -49,6 +49,8 @@ function validar (e){
         form.lastName.classList.add("is-valid");
     }
 
+
+    
 }
 
 form.addEventListener("submit", validar);
