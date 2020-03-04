@@ -62,22 +62,22 @@ function validar (e){
         form.inputState.focus ();
         form.inputState.classList.add("bg-danger");
         form.inputState.classList.remove("is-valid");
-    } else {
-        form.inputState.classList.remove("bg-danger");
-        form.inputState.classList.add("is-valid");
     }
 
-
-    if (!validator.isPostalCode (form.postalCode.value) || validator.isEmpty (form.postalCode.value)) { 
+    if (!validator.isNumeric (form.postalCode.value) || validator.isEmpty (form.postalCode.value)) { 
         form.postalCode.focus ();
-        form.postalCode.classList.add("is-invalid");
+        form.postalCode.classList.add("bg-danger");
         form.postalCode.classList.remove("is-valid");
     } else {
-        form.postalCode.classList.remove("is-invalid");
+        form.postalCode.classList.remove("bg-danger");
         form.postalCode.classList.add("is-valid");
     }
 
-
+    if (validator.isEmpty (form.weAcept.value)) { 
+        form.inputState.focus ();
+        form.inputState.classList.add("bg-danger");
+        form.inputState.classList.remove("is-valid");
+    }
 
 }
 
