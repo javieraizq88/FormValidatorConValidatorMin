@@ -78,7 +78,6 @@ function validar (e){
         form.inputState.classList.add("bg-danger");
         form.inputState.classList.remove("is-valid");
     }
-
 }
 
 form.addEventListener("submit", validar);
